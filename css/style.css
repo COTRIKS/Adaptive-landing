@@ -1,0 +1,691 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Conv_Muller Regular";
+  src: url("../fonts/Muller Regular.eot");
+  src: local("☺"), url("../fonts/Muller Regular.woff") format("woff"), url("../fonts/Muller Regular.ttf") format("truetype"), url("../fonts/Muller Regular.svg") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*, *:before, *:after {
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+header, footer {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+a, a:visited, a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.theme, .end h2, .game h2, .continue h2 {
+  color: black;
+  font-size: 35px;
+  font-family: "Arial";
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+header {
+  background: #decae4;
+  z-index: 100;
+}
+header .menu {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .menu__logo {
+  max-width: 100%;
+}
+header .menu__list {
+  display: flex;
+}
+header .menu__list li {
+  margin-right: 30px;
+}
+header .menu__list li:last-child {
+  margin-right: 0;
+}
+header .menu__list li:last-child a {
+  color: #bb3ebb;
+}
+header .menu__list li:last-child a:hover {
+  color: #f08ff0;
+}
+header .menu__list li a {
+  color: black;
+  font-size: 15px;
+  font-family: "Conv_Muller Regular";
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.5s;
+}
+header .menu__list li a:hover {
+  color: #575757;
+}
+header .menu__open {
+  display: none;
+  width: 40px;
+  height: 36.5px;
+  cursor: pointer;
+}
+header .menu__open .open {
+  position: relative;
+  top: 16.5px;
+  width: 40px;
+  height: 4px;
+  background: black;
+}
+header .menu__open .open:before, header .menu__open .open:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+header .menu__open .open:before {
+  top: -15px;
+}
+header .menu__open .open::after {
+  top: 15px;
+}
+header .burger {
+  display: none;
+  width: 100%;
+  background: #decae4;
+  transform: translateX(100%);
+  transition: 0.4s;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+header .burger__menu {
+  width: 960px;
+  height: 100vh;
+  margin: 0 auto;
+}
+header .burger__for-close {
+  height: 104px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+header .burger__close {
+  width: 36.5px;
+  height: 33px;
+  cursor: pointer;
+}
+header .burger__close .close {
+  position: relative;
+  top: 14.5px;
+  right: 3px;
+  width: 40px;
+  height: 4px;
+  background: black;
+  transform: rotate(-45deg);
+}
+header .burger__close .close:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  transform: rotate(90deg);
+}
+header .burger__list {
+  height: 100%;
+  padding: 30px 0 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+header .burger__list li {
+  margin-bottom: 50px;
+}
+header .burger__list li:last-child {
+  margin-bottom: 0;
+}
+header .burger__list li:last-child a {
+  color: #bb3ebb;
+}
+header .burger__list li:last-child a:hover {
+  color: #f08ff0;
+}
+header .burger__list li a {
+  color: black;
+  font-size: 15px;
+  font-family: "Conv_Muller Regular";
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.5s;
+  letter-spacing: 0.2em;
+}
+header .burger__list li a:hover {
+  color: #575757;
+}
+
+.up-btn {
+  position: fixed;
+  top: 80%;
+  right: 2%;
+}
+.up-btn img {
+  width: 100px;
+}
+
+.begin {
+  margin-bottom: 170px;
+}
+.begin__card1 img, .begin__card2 img {
+  width: 100%;
+}
+.begin__card1 h2, .begin__card2 h2 {
+  color: black;
+  font-size: 30px;
+  font-family: "Conv_Muller Regular";
+  text-transform: none;
+  text-decoration: none;
+  margin-bottom: 40px;
+}
+.begin__card1 p, .begin__card2 p {
+  color: black;
+  font-size: 20px;
+  font-family: "consolas";
+  text-transform: none;
+  text-decoration: none;
+  line-height: 1.3em;
+}
+
+.continue {
+  margin-bottom: 115px;
+}
+.continue__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.continue__info img {
+  display: block;
+  width: 40%;
+}
+.continue__info .info1 {
+  order: 1;
+}
+.continue__info .info2 {
+  order: 4;
+}
+.continue__info .text {
+  width: 60%;
+  padding: 55px 0;
+  color: black;
+  font-size: 20px;
+  font-family: "consolas";
+  text-transform: none;
+  text-decoration: none;
+  line-height: 1.3em;
+}
+.continue__info .text:nth-child(2) {
+  order: 2;
+  padding-left: 50px;
+}
+.continue__info .text:nth-child(4) {
+  order: 3;
+  padding-right: 50px;
+}
+
+.game {
+  margin-bottom: 90px;
+}
+.game__dragons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.game__circle {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 2px solid black;
+  margin: 0 30px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 1;
+}
+.game__circle:before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #8a408a;
+  transition: 0.3s;
+  z-index: -1;
+}
+.game__circle:hover {
+  border: none;
+}
+.game__circle:hover h3 {
+  color: white;
+}
+.game__circle:hover:before {
+  top: 0;
+}
+.game__circle img {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.game__circle h3 {
+  color: black;
+  font-size: 20px;
+  font-family: "consolas";
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.end {
+  margin-bottom: 100px;
+}
+.end__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  margin: 0 auto;
+}
+.end__form input {
+  height: 55px;
+  margin-bottom: 30px;
+}
+.end__form textarea {
+  height: 170px;
+  margin-bottom: 35px;
+}
+.end__form .input-text {
+  width: 100%;
+  padding: 10px;
+  color: black;
+  font-size: 18px;
+  font-family: "consolas";
+  text-transform: none;
+  text-decoration: none;
+}
+.end__form .input-text:focus {
+  border: 2px solid #29b453;
+}
+.end__form button {
+  width: 270px;
+  height: 60px;
+  background: #29b468;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-family: "Conv_Muller Regular";
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  background: #decae4;
+}
+.footer__text {
+  color: black;
+  font-size: 23px;
+  font-family: "Arial";
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 960px;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #decae4;
+  }
+  header .menu {
+    width: 960px;
+    margin: 0 auto;
+  }
+  header .menu__list {
+    display: none;
+  }
+  header .menu__open {
+    display: block;
+  }
+  header .burger {
+    display: block;
+  }
+
+  .up-btn {
+    display: none;
+  }
+
+  .begin {
+    margin-top: 100px;
+    margin-bottom: 150px;
+  }
+  .begin h2 {
+    font-size: 27px;
+    margin-bottom: 30px;
+  }
+  .begin p {
+    font-size: 19px;
+  }
+
+  .continue {
+    margin-bottom: 95px;
+  }
+  .continue__info .text {
+    font-size: 19px;
+  }
+
+  .game {
+    margin-bottom: 70px;
+  }
+  .game__dragons {
+    justify-content: space-around;
+  }
+
+  .end {
+    margin-bottom: 90px;
+  }
+
+  .footer {
+    padding: 50px 0;
+  }
+  .footer__text {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .container {
+    width: 720px;
+  }
+
+  .theme, .continue h2, .game h2, .end h2 {
+    margin-bottom: 60px;
+  }
+
+  header .menu {
+    width: 720px;
+  }
+  header .burger__menu {
+    width: 720px;
+  }
+
+  .begin {
+    margin-bottom: 110px;
+  }
+  .begin h2 {
+    font-size: 25px;
+  }
+  .begin p {
+    font-size: 18px;
+  }
+  .begin__card1 p {
+    margin-bottom: 40px;
+  }
+
+  .continue {
+    margin-bottom: 55px;
+  }
+  .continue__info .text {
+    width: 100%;
+    font-size: 18px;
+  }
+  .continue__info .text:nth-child(2) {
+    order: 2;
+    padding-left: 0;
+  }
+  .continue__info .text:nth-child(4) {
+    order: 4;
+    padding-right: 0;
+  }
+  .continue__info img {
+    width: 100%;
+  }
+  .continue__info .info1 {
+    order: 1;
+  }
+  .continue__info .info2 {
+    order: 3;
+  }
+
+  .game {
+    margin-bottom: 30px;
+  }
+  .game__dragons {
+    justify-content: center;
+  }
+
+  .end {
+    margin-bottom: 80px;
+  }
+
+  .footer {
+    padding: 40px 0;
+  }
+  .footer__text {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 540px;
+  }
+
+  .theme, .continue h2, .game h2, .end h2 {
+    font-size: 31px;
+  }
+
+  header .menu {
+    width: 540px;
+  }
+  header .burger__menu {
+    width: 540px;
+  }
+
+  .begin {
+    margin-bottom: 90px;
+  }
+  .begin h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .begin p {
+    font-size: 16px;
+  }
+
+  .continue {
+    margin-bottom: 35px;
+  }
+  .continue__info .text {
+    font-size: 16px;
+  }
+
+  .game {
+    margin-bottom: 10px;
+  }
+  .game__dragons {
+    justify-content: center;
+  }
+
+  .end__form {
+    width: 540px;
+  }
+  .end__form button {
+    width: 230px;
+    height: 55px;
+    font-size: 18px;
+  }
+
+  .footer {
+    padding: 35px 0;
+  }
+  .footer__text {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .container {
+    width: 90%;
+  }
+
+  .theme, .continue h2, .game h2, .end h2 {
+    font-size: 19px;
+  }
+
+  header .menu {
+    width: 90%;
+  }
+  header .burger__menu {
+    width: 90%;
+  }
+
+  .begin {
+    text-align: center;
+  }
+  .begin h2 {
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  .begin p {
+    font-size: 13.3px;
+  }
+
+  .continue__info .text {
+    padding: 35px 0;
+    font-size: 16px;
+    text-align: center;
+  }
+  .continue__info .text:nth-child(2) {
+    margin-bottom: 30px;
+  }
+
+  .game__circle {
+    width: 230px;
+    height: 230px;
+  }
+  .game__circle img {
+    width: 100px;
+  }
+  .game__circle h3 {
+    font-size: 17px;
+  }
+
+  .end__form {
+    width: 100%;
+  }
+  .end__form input {
+    height: 50px;
+  }
+  .end__form textarea {
+    height: 150px;
+  }
+  .end__form .input-text {
+    font-size: 16px;
+  }
+  .end__form button {
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  footer {
+    padding: 50px 0;
+  }
+  footer__text {
+    font-size: 21px;
+  }
+}

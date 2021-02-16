@@ -1,0 +1,301 @@
+@media screen and (max-width: 1200px){
+  .container{
+    width: 960px;
+  }
+
+  header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgb(222, 202, 228);
+    .menu{
+      width: 960px;
+      margin: 0 auto;
+      &__list{
+        display: none;
+      }
+      &__open{
+        display: block;
+      }
+    }
+    .burger{
+      display: block;
+    }
+  }
+
+  .up-btn{
+    display: none;
+  }
+
+  .begin{
+    margin-top: 100px;
+    margin-bottom: 150px;
+    h2{
+      font-size: 27px;
+      margin-bottom: 30px;
+    }
+    p{
+      font-size: 19px;
+    }
+  }
+
+  .continue{
+    margin-bottom: 95px;
+    &__info{
+      .text{
+        font-size: 19px;
+      }
+    }
+  }
+
+  .game{
+    margin-bottom: 70px;
+    &__dragons{
+      justify-content: space-around;
+    }
+  }
+
+  .end{
+    margin-bottom: 90px;
+  }
+
+  .footer{
+    padding: 50px 0;
+    &__text{
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 992px){
+  .container{
+    width: 720px;
+  }
+
+  .theme{
+    margin-bottom: 60px;
+  }
+
+  header{
+    .menu{
+      width: 720px;
+    }
+    .burger{
+      &__menu{
+        width: 720px;
+      }
+    }
+  }
+
+  .begin{
+    margin-bottom: 110px;
+    h2{
+      font-size: 25px;
+    }
+    p{
+      font-size: 18px;
+    }
+    &__card1{
+      p{
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .continue{
+    margin-bottom: 55px;
+    &__info{
+      .text{
+        width: 100%;
+        font-size: 18px;
+      }
+      .text:nth-child(2){
+        order: 2;
+        padding-left: 0;
+      }
+      .text:nth-child(4){
+        order: 4;
+        padding-right: 0;
+      }
+      img{
+        width: 100%;
+      }
+      .info1{
+        order: 1;
+      }
+      .info2{
+        order: 3;
+      }
+    }
+  }
+
+  .game{
+    margin-bottom: 30px;
+    &__dragons{
+      justify-content: center;
+    }
+  }
+
+  .end{
+    margin-bottom: 80px;
+  }
+
+  .footer{
+    padding: 40px 0;
+    &__text{
+      font-size: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  .container{
+    width: 540px;
+  }
+
+  .theme{
+    font-size: 31px;
+  }
+
+  header{
+    .menu{
+      width: 540px;
+    }
+    .burger{
+      &__menu{
+        width: 540px;
+      }
+    }
+  }
+
+  .begin{
+    margin-bottom: 90px;
+    h2{
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    p{
+      font-size: 16px;
+    }
+  }
+
+  .continue{
+    margin-bottom: 35px;
+    &__info{
+      .text{
+        font-size: 16px;
+      }
+    }
+  }
+
+  .game{
+    margin-bottom: 10px;
+    &__dragons{
+      justify-content: center;
+    }
+  }
+
+  .end{
+    &__form{
+      width: 540px;
+      button{
+        width: 230px;
+        height: 55px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .footer{
+    padding: 35px 0;
+    &__text{
+      font-size: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 576px){
+  .container{
+    width: 90%;
+  }
+
+  .theme{
+    font-size: 19px;
+  }
+
+  header{
+    .menu{
+      width: 90%;
+    }
+    .burger{
+      &__menu{
+        width: 90%;
+      }
+    }
+  }
+
+  .begin{
+    text-align: center;
+    h2{
+      font-size: 17px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    p{
+      font-size: 13.3px;
+    }
+  }
+
+  .continue{
+    &__info{
+      .text{
+        padding: 35px 0;
+        font-size: 16px;
+        text-align: center;
+      }
+      .text:nth-child(2){
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .game{
+    &__circle{
+      width: 230px;
+      height: 230px;
+      img{
+        width: 100px;
+      }
+      h3{
+        font-size: 17px;
+      }
+    }
+  }
+
+  .end{
+    &__form{
+      width: 100%;
+      input{
+        height: 50px;
+      }
+      textarea{
+        height: 150px;
+      }
+      .input-text{
+        font-size: 16px;
+      }
+      button{
+        width: 200px;
+        height: 50px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  footer{
+    padding: 50px 0;
+    &__text{
+      font-size: 21px;
+    }
+  }
+}

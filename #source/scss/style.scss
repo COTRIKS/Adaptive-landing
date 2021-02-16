@@ -1,0 +1,345 @@
+@font-face{
+	font-family: 'Conv_Muller Regular';
+	src: url('../fonts/Muller Regular.eot');
+	src: local('☺'), url('../fonts/Muller Regular.woff') format('woff'), url('../fonts/Muller Regular.ttf') format('truetype'), url('../fonts/Muller Regular.svg') format('svg');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@import "nullstyle.scss";
+
+$colorLight: white;
+$colorDark: black;
+
+$font1: 'Arial';
+$font2: 'consolas';
+$font3: 'Conv_Muller Regular';
+
+@mixin textStyle($c, $fs, $ff, $tt, $td){
+  color: $c;
+  font-size: $fs;
+  font-family: $ff;
+  text-transform: $tt;
+  text-decoration: $td;
+}
+
+.theme{
+  @include textStyle($colorDark, 35px, $font1, uppercase, none);
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.container{
+  width: 1170px;
+  margin: 0 auto;
+}
+
+header{
+  background: rgb(222, 202, 228);
+  z-index: 100;
+  .menu{
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__logo{
+      max-width: 100%;
+    }
+    &__list{
+      display: flex;
+      li{
+        margin-right: 30px;
+        &:last-child{
+          margin-right: 0;
+          a{
+            color: rgb(187, 62, 187);
+            &:hover{
+              color: lighten(violet, 3%);
+            }
+          }
+        }
+        a{
+          @include textStyle($colorDark, 15px, $font3, uppercase, none);
+          transition: .5s;
+          &:hover{
+            color: rgb(87, 87, 87);
+          }
+        }
+      }
+    }
+    &__open{
+      display: none;
+      width: 40px;
+      height: 36.5px;
+      cursor: pointer;
+      .open{
+        position: relative;
+        top: 16.5px;
+        width: 40px;
+        height: 4px;
+        background: black;
+        &:before, &:after{
+          content: '';
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: black;
+        }
+        &:before{
+          top: -15px;
+        }
+        &::after{
+          top: 15px;
+        }
+      }
+    }
+  }
+
+  .burger{
+    display: none;
+    width: 100%;
+    background: rgb(222, 202, 228);
+    transform: translateX(100%);
+    transition: 0.4s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    &__menu{
+      width: 960px;
+      height: 100vh;
+      margin: 0 auto;
+    }
+    &__for-close{
+      height: 104px;
+      padding: 20px 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    &__close{
+      width: 36.5px;
+      height: 33px;
+      cursor: pointer;
+      .close{
+        position: relative;
+        top: 14.5px;
+        right: 3px;
+        width: 40px;
+        height: 4px;
+        background: black;
+        transform: rotate(-45deg);
+        &:before{
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: black;
+          transform: rotate(90deg);
+        }
+      }
+    }
+    &__list{
+      height: 100%;
+      padding: 30px 0 190px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      li{
+        margin-bottom: 50px;
+        &:last-child{
+          margin-bottom: 0;
+          a{
+            color: rgb(187, 62, 187);
+            &:hover{
+              color: lighten(violet, 3%);
+            }
+          }
+        }
+        a{
+          @include textStyle($colorDark, 15px, $font3, uppercase, none);
+          transition: .5s;
+          letter-spacing: 0.2em;
+          &:hover{
+            color: rgb(87, 87, 87);
+          }
+        }
+      }
+    }
+  }
+}
+
+.up-btn{
+  position: fixed;
+  top: 80%;
+  right: 2%;
+  img{
+    width: 100px;
+  }
+}
+
+.begin{
+  margin-bottom: 170px;
+  &__card1, &__card2{
+    img{
+      width: 100%;
+    }
+    h2{
+      @include textStyle($colorDark, 30px, $font3, none, none);
+      margin-bottom: 40px;
+    }
+    p{
+      @include textStyle($colorDark, 20px, $font2, none, none);
+      line-height: 1.3em;
+    }
+  }
+}
+
+.continue{
+  margin-bottom: 115px;
+  h2{
+    @extend .theme;
+  }
+  &__info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    img{
+      display: block;
+      width: 40%;
+    }
+    .info1{
+      order: 1;
+    }
+    .info2{
+      order: 4;
+    }
+    .text{
+      width: 60%;
+      padding: 55px 0;
+      @include textStyle($colorDark, 20px, $font2, none, none);
+      line-height: 1.3em;
+    }
+    .text:nth-child(2){
+      order: 2;
+      padding-left: 50px;
+    }
+    .text:nth-child(4){
+      order: 3;
+      padding-right: 50px;
+    }
+  }
+}
+
+.game{
+  margin-bottom: 90px;
+  h2{
+    @extend .theme;
+  }
+  &__dragons{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__circle{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin: 0 30px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s;
+    z-index: 1;
+    &:before{
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: rgb(138, 64, 138);
+      transition: .3s;
+      z-index: -1;
+    }
+    &:hover{
+      border: none;
+      h3{
+        color: $colorLight;
+      }
+    }
+    &:hover:before{
+      top: 0;
+    }
+    img{
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+    h3{
+      @include textStyle($colorDark, 20px, $font2, uppercase, none);
+      transition: .3s;
+    }
+  }
+}
+
+.end{
+  margin-bottom: 100px;
+  h2{
+    @extend .theme;
+  }
+  &__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    margin: 0 auto;
+    input{
+      height: 55px;
+      margin-bottom: 30px;
+    }
+    textarea{
+      height: 170px;
+      margin-bottom: 35px;
+    }
+    .input-text{
+      width: 100%;
+      padding: 10px;
+      @include textStyle($colorDark, 18px, $font2, none, none);
+      &:focus{
+        border: 2px solid rgb(41, 180, 83);
+      }
+    }
+    button{
+      width: 270px;
+      height: 60px;
+      background: rgb(41, 180, 104);
+      border: none;
+      @include textStyle($colorLight, 20px, $font3, uppercase, none);
+    }
+  }
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  background: rgb(222, 202, 228);
+  &__text{
+    @include textStyle($colorDark, 23px, $font1, uppercase, none);
+    letter-spacing: 0.1em;
+  }
+}
+
+@import "mediastyle.scss";
